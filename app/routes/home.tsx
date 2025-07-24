@@ -9,15 +9,19 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <main className="bg-[url('/images/bg-main.svg')] bg-cover ">
-    <Navbar />
-
-
-    <section className="main-section">
-      <div className="page-heading">
-        <h1>Track Your Application & Resume Ratings</h1>
-        <h2>Review your submissions and check AI-powered feedback</h2>
-      </div>
-    </section>
-  </main>;
+  return (
+    // Full page layout with background image
+    <main className="bg-[url('/images/bg-main.svg')] bg-cover ">
+      {/* Navigation Menu */}
+      <Navbar />
+      {/* Main Section */}
+      <section className="main-section">
+        <div className="page-heading">
+          <h1>Track Your Application & Resume Ratings</h1>
+          <h2>Review your submissions and check AI-powered feedback</h2>
+        </div>
+      </section>
+      
+    </main>
+  );
 }
