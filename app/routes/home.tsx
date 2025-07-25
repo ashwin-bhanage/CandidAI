@@ -25,7 +25,7 @@ export default function Home() {
 
       {/* Resume Cards Section */}
       {resumes.length > 0 && (
-        <div className="resume-section">
+        <div className="resumes-section">
           {resumes.map((resume) => (
             <ResumeCard key={resume.id} resume={resume} />
           ))}
