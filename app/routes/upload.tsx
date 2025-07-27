@@ -1,14 +1,89 @@
+import {prepareInstructions}  from "constants/index";
 import { useState } from "react"
+import { useNavigate } from "react-router";
 import FileUploader from "~/components/FileUploader";
 import Navbar from "~/components/Navbar"
+import { convertPdfToImage } from "~/lib/pdfToImage";
+import { usePuterStore } from "~/lib/puter";
+import { generateId } from "~/lib/utils";
 
 const upload = () => {
-
+    // kv is key-value store, fs is file system, ai is AI service, auth is authentication
+    // isLoading is a boolean to check if the store is loading
+    const { auth, isLoading, fs, ai, kv } = usePuterStore();
+    const navigate = useNavigate();
     const [isProcessing, setisProcessing] = useState(false);
-    const [statusText, setstatusText] = useState('');
+    const [StatusText, setStatusText] = useState('');
 
     // to manage file state
     const [file, setFile] = useState<File | null>(null);
+    
+    // for handling file upload
+    const handleFileSelect = (file: File | null) => {
+        setFile(file);
+    };
+
+    // handle form analysis submission
+    const handleAnaylze = async ({ companyName, jobTitle, jobDescription, file }: { companyName: string, jobTitle: string, jobDescription: string, file: File }) => {
+        setisProcessing(true);
+        setStatusText('Analyzing your resume...');
+        const uploadedFile = await fs.upload([file]);
+
+        if(!uploadedFile) return setStatusText("Failed to upload the file. Please try again.");
+            
+
+        setStatusText('Converting your resume to image...');
+        const imageFile = await convertPdfToImage(file);
+
+        // to check if image conversion was successful
+        if (!imageFile.file) return setStatusText('Failed to convert PDF to image. Please try again.');
+
+        setStatusText('Uploading the image...');
+
+        // to upload image of file
+        const uploadedImage = await fs.upload([imageFile.file]);
+        if (!uploadedImage) return setStatusText('Failed to upload the image. Please try again.');
+
+        setStatusText('Preparing data...');
+
+        // to analyze the resume with AI
+        const analysis = generateId();
+
+        // to have the analysis data
+        const analysisData = {
+            id: analysis,
+            resumePath: uploadedFile.path,
+            imagePath: uploadedImage.path,
+            companyName,
+            jobTitle,
+            jobDescription,
+            feedback: '',
+        };
+        // to get the value from the puter store using kv store
+        await kv.set(`resume:{${analysis}}`, JSON.stringify(analysisData));
+
+        setStatusText('Analyzing your resume with AI...');
+        // to analyze the resume with AI
+
+        const feedback = await ai.feedback(
+            uploadedFile.path,
+            prepareInstructions({ jobTitle, jobDescription})
+        );
+    // this tells and fetch the AI response format
+        if (!feedback) return setStatusText('Failed to analyze the resume. Please try again.');
+
+        const feedbackText = typeof feedback.message.content === 'string' ? feedback.message.content : feedback.message.content[0].text; 
+
+        // use the above message.content to update the analysis data
+        analysisData.feedback = JSON.parse(feedbackText);
+        // to update the analysis data in the kv store
+        await kv.set(`resume:{${analysis}}`, JSON.stringify(analysisData));
+
+        setStatusText('Analysis completed successfully!');
+        console.log("Analysis Data:", analysisData);
+        
+    }
+
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => { 
         e.preventDefault();
@@ -20,19 +95,12 @@ const upload = () => {
         const jobTitle = formData.get('job-title') as string;
         const jobDescription = formData.get('job-description') as string;
 
-        console.log({
-            companyName,
-            jobTitle,
-            jobDescription,
-            file
-        });
+        if (!file) return;
+
+        handleAnaylze({companyName, jobTitle, jobDescription, file});
         
     };
 
-    // for handling file upload
-    const handleFileSelect = (file: File | null) => {
-        setFile(file);
-    };
 
     return (
         <main className="bg-[url('/images/bg-main.svg')] bg-cover ">
@@ -42,7 +110,7 @@ const upload = () => {
                     <h1>Smart feedback for your dream job</h1>
                     {isProcessing ? (
                         <>
-                            <h2>{statusText}</h2>
+                            <h2>{StatusText}</h2>
                             <img src="/images/resume-scan.gif" className="w-full" />
                         </>
                     ) : (
