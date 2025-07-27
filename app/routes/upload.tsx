@@ -26,6 +26,7 @@ const upload = () => {
     // handle form analysis submission
     const handleAnaylze = async ({ companyName, jobTitle, jobDescription, file }: { companyName: string, jobTitle: string, jobDescription: string, file: File }) => {
         setisProcessing(true);
+        // intial analyze state
         setStatusText('Analyzing your resume...');
         const uploadedFile = await fs.upload([file]);
 
