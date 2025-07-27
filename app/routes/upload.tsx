@@ -32,7 +32,7 @@ const upload = () => {
 
         if(!uploadedFile) return setStatusText("Failed to upload the file. Please try again.");
             
-
+        // convert the PDF to image on the hero section to have better analysis
         setStatusText('Converting your resume to image...');
         const imageFile = await convertPdfToImage(file);
 
