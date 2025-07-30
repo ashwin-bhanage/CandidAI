@@ -82,6 +82,7 @@ const upload = () => {
 
         setStatusText('Analysis completed successfully!');
         console.log("Analysis Data:", analysisData);
+        navigate(`/resume/${analysis}`);
         
     }
 
