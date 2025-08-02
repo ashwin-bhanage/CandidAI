@@ -52,13 +52,13 @@ const upload = () => {
 
         // to have the analysis data
         const analysisData = {
-            id: analysis,
-            resumePath: uploadedFile.path,
-            imagePath: uploadedImage.path,
-            companyName,
-            jobTitle,
-            jobDescription,
-            feedback: '',
+          id: analysis,
+          resumePath: uploadedFile.path,
+          imagePath: uploadedImage.path,
+          companyName,
+          jobTitle,
+          jobDescription,
+          feedback: "",
         };
         // to get the value from the puter store using kv store
         await kv.set(`resume:{${analysis}}`, JSON.stringify(analysisData));

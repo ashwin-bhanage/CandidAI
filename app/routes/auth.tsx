@@ -34,23 +34,26 @@ const Auth = () => {
                 <p>Signing you in...</p>
               </button>
             ) : (
-                <>
-                  {auth.isAuthenticated ? (
-                    <button className="auth-button" onClick={() => auth.signOut()}>
-                      <p>Log Out</p>
-                    </button>
-                  ) : (
-                      <button className="auth-button" onClick={() => auth.signIn()}>
-                        <p>Log In</p>
-                      </button>
-                  )}
-                </>
+              <>
+                {auth.isAuthenticated ? (
+                  <button
+                    className="auth-button"
+                    onClick={() => auth.signOut()}
+                  >
+                    <p>Log Out</p>
+                  </button>
+                ) : (
+                  <button className="auth-button" onClick={() => auth.signIn()}>
+                    <p>Log In</p>
+                  </button>
+                )}
+              </>
             )}
           </div>
         </section>
       </div>
     </main>
-  )
+  );
 }
 
 export default Auth
