@@ -51,7 +51,10 @@ export default function Home() {
         <div className="page-heading py-16">
           <h1>Track Your Application & Resume Ratings</h1>
           {!loadingResumes && resumes?.length === 0 ?(
-            <h2>You have not submitted any resumes. Please Upload !!</h2>
+            <>
+            <h2>You haven't submitted any resumes. Please upload one!</h2>
+            <Link to="/upload" className="primary-button w-fit text-xl font-semibold">Upload Resume</Link>
+            </>
           ): (
             <h2>Review your submissions and check AI-powered feedback</h2>
           )}
