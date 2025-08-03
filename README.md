@@ -1,44 +1,68 @@
-# 🎯 CandidAI
+# 🧠 CandidAI
 
-CandidAI is a modern, AI-powered web application built with **React Router v7**, **TypeScript**, **Vite**, and **TailwindCSS**.  
-It’s designed to deliver fast, dynamic, and SEO-friendly pages using Server-Side Rendering (SSR) while keeping the codebase clean and maintainable.
+A smart, clean, and fast React + Vite-powered frontend application for AI-driven resume analysis or career tools. Built with modern technologies like React Router and Tailwind CSS.
 
----
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](https://your-vercel-deployment.vercel.app/homepage.png)
+
+### 📤 Resume Upload
+![Resume Upload](https://your-vercel-deployment.vercel.app/uploadPage.png)
 
 ## 🚀 Live Demo
-🔗 **[View Deployment](https://candid-ai-seven.vercel.app/)**
 
----
+🌐 [View Live on Vercel](https://candid-ai-seven.vercel.app/)
 
-## 📂 Repository
-📦 **[GitHub Source Code](https://github.com/Ashwinbh-28/CandidAI)**
+## 📁 Features
 
----
-
-## ✨ Features
-- ⚡ **Blazing Fast**: Powered by Vite + React Router SSR
-- 🎨 **Modern Styling**: TailwindCSS with utility-first approach
-- 📱 **Responsive**: Works seamlessly across devices
-- 🔄 **Full Routing Support**: Handles dynamic & nested routes
-- 🛠️ **State Management**: Powered by Zustand
-- 📂 **Clean Project Structure** for easy maintainability
-
----
+- ⚛️ Built with **React + Vite**
+- 🎨 Styled using **Tailwind CSS**
+- 🌐 Multi-page routing with **React Router**
+- 📱 Fully responsive UI
+- 🧪 Easy to extend and customize
 
 ## 🛠️ Tech Stack
-- **React** 19
-- **React Router v7** (SSR mode)
-- **TypeScript**
-- **Vite** 6
-- **TailwindCSS** 4
-- **Zustand**
-- **Vercel** (Serverless Deployment)
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/)
+
+## 🔧 Installation & Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/CandidAI.git
+cd CandidAI
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+## 🚀 Deployment
+
+You can deploy this project easily on [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/):
+
+1. Push your code to GitHub
+2. Import your GitHub repo on Vercel or Netlify
+3. Set the build command to `npm run build`
+4. Set the output directory to `dist`
+5. Deploy!
+
+## 🧾 License
+
+[MIT](./LICENSE)
 
 ---
 
-## 📦 Installation & Local Development
-
-Clone the repo:
-```bash
-git clone https://github.com/Ashwinbh-28/CandidAI.git
-cd CandidAI
+Made with ❤️ using React +
