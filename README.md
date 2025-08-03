@@ -6,7 +6,7 @@ A smart, clean, and fast React + Vite-powered frontend application for AI-driven
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page]([https://your-vercel-deployment.vercel.app/homepage.png](https://github.com/Ashwinbh-28/CandidAI/blob/69d8e84881cf083410910e6885a2c2c6c90b125e/Screenshot%202025-08-04%20014712.png))
+![Home Page]([https://your-vercel-deployment.vercel.app/homepage.png](https://github.com/Ashwinbh-28/CandidAI/69d8e84881cf083410910e6885a2c2c6c90b125e/Screenshot%202025-08-04%20014712.png))
 
 ### 📤 Resume Upload
 ![Resume Upload]([https://your-vercel-deployment.vercel.app/uploadPage.png](https://github.com/Ashwinbh-28/CandidAI/blob/85ada6535e9f1ea4c3a464c752a45b747e5954d5/Screenshot%202025-08-04%20014740.png))
