@@ -1,4 +1,3 @@
-
 # 🧠 CandidAI
 
 A smart, clean, and fast React + Vite-powered frontend application for AI-driven resume analysis or career tools. Built with modern technologies like React Router and Tailwind CSS.
