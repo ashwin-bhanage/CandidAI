@@ -1,87 +1,70 @@
-# Welcome to React Router!
+<div align="center">
+  <h1>CandidAI 🎯</h1>
+  <p>A blazing-fast, AI-ready React SSR application with modern tech and zero bloat.</p>
 
-A modern, production-ready template for building full-stack React applications using React Router.
+  <a href="https://candid-ai-seven.vercel.app/">
+    <img src="https://img.shields.io/badge/Live-Demo-green?style=for-the-badge&logo=vercel" />
+  </a>
+  <a href="https://github.com/Ashwinbh-28/CandidAI">
+    <img src="https://img.shields.io/github/stars/Ashwinbh-28/CandidAI?style=for-the-badge&logo=github" />
+  </a>
+  <a href="https://github.com/Ashwinbh-28/CandidAI/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Ashwinbh-28/CandidAI?style=for-the-badge" />
+  </a>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+  <br /><br />
 
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+  <img src="https://img.shields.io/badge/Built%20With-Vite-blue?style=flat-square&logo=vite" />
+  <img src="https://img.shields.io/badge/SSR-React%20Router-orange?style=flat-square&logo=react" />
+  <img src="https://img.shields.io/badge/TS-TypeScript-blue?style=flat-square&logo=typescript" />
+  <img src="https://img.shields.io/badge/CSS-Tailwind-38bdf8?style=flat-square&logo=tailwindcss" />
+</div>
 
 ---
 
-Built with ❤️ using React Router.
+## 🌐 Live Project
+
+🔗 [**Deployed on Vercel →**](https://candid-ai-seven.vercel.app/)
+
+---
+
+## 📸 Preview
+
+<!-- Replace with your actual screenshot -->
+<img src="https://via.placeholder.com/1000x500?text=App+Screenshot+Goes+Here" alt="App Screenshot" style="border-radius: 8px" />
+
+---
+
+## 🧠 Features
+
+- ⚛️ **React 19 + React Router v7 (SSR)**
+- ⚡ **Blazing-fast performance with Vite**
+- 💅 **TailwindCSS for clean, responsive UI**
+- 💾 **State management with Zustand**
+- 🌍 **Deployed as serverless function on Vercel**
+- 🧱 **Type-safe codebase with TypeScript**
+- ✂️ **Minimalistic and highly extendable architecture**
+
+---
+
+## 🧱 Tech Stack
+
+| Tech              | Purpose                     |
+|-------------------|------------------------------|
+| `React`           | Frontend framework (v19)     |
+| `React Router`    | Server-side rendering engine |
+| `Vite`            | Build & dev tool             |
+| `TypeScript`      | Type safety                  |
+| `TailwindCSS`     | Styling                      |
+| `Zustand`         | Global state management      |
+| `Vercel`          | Hosting + serverless backend |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Ashwinbh-28/CandidAI.git
+cd CandidAI
