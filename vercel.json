@@ -1,7 +1,8 @@
 {
+  "version": 2,
   "functions": {
     "api/index.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "@vercel/node@3.0.0"
     }
   },
   "rewrites": [
